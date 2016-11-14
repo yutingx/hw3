@@ -1,6 +1,6 @@
 ## Prim’s algorithm for MST
 ### By Yigan Zhang & Yuting Xue
-  The program would read input from a file. The output is a list of edges (and their weights) that constitute a minimum spanning tree by Prim’s algorithm with min-heap as implement of the priority queue.
+  The program would read input from a file. The output is a list of edges (and their weights) that constitute a minimum spanning tree by Prim’s algorithm with min-heap as implement of the priority queue. And shows the total weight of MST.
 ### How to use it?
   Tap in teminal
 ```
