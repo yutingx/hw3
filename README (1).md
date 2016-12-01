@@ -54,16 +54,24 @@ Find `fp`in main function in edit.cpp (line 234)
     for(int i=0;i<m;i++)
     ......
   
-    //printf("right:%d,insert:%d,delete:%d,substitute:%d\n",right,insert,delet,substit);*/
+    //printf("right:%d,insert:%d,delete:%d,substitute:%d\n",right,insert,delet,substit);
 ```
   Then, By changing `input1.txt` to `input2.txt`and`input3.txt`, you will get result of those three both on your teminal and output files.
 
 ### For question 3
-    Besides two array of x, y, you need two more array str1 and str2.
-    For example, when edit 'lgo' to 'algo' in x and y, you need to insert 'a' in an empty array str1, paste x to an empty array str2. And first print str1, then str2, finish insert.
-    When edit 'algo' to 'lgo' in x, y, paste letter after 'a' in x to an empty array str1, print str1, finish delete.
-    when edit 'ago' to 'lgo' in x,y, add letter 'l' to array str1, paste letter after 'a' in x to str2, print str1 and str2, finish replace.
-    By doing this, you can implement in O(1) time.
+  All the tansformation operations can be implemented in O(1) time if you use two empty stacks, L and R, instead of only z.
+  At first, we need to insert all char in x to R by sequence and keep L empty.
+
+  If letter is `right` in x and y, do nothing.
+  
+  If `insert` is needed, POP letters in R, which are before the insert position, PUSH them to L. Then PUSH the one you want to insert into L, print L, R.
+  
+  If `delete` is needed, POP letters in R, which are before the delete position, PUSH them to L. Then POP the one you want to delete in R, print L, R.
+  
+  If `replace` is needed, POP letters in R, which are before the replace position, PUSH them to L. Then POP the one you want to replace in R, PUSH the one you want to insert into L, print L, R.
+  
+  Each stack operation requires O(1) time, and each transformation operation requires only O(1) stack operations. 
+  So, now we can do each operation in O(1) time.
 
   
   Thanks for reading :blush:
